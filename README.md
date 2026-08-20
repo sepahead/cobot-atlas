@@ -1,5 +1,13 @@
 # cobot-atlas
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
+    <img src="assets/logo-light.svg" width="180" alt="COBOT-ATLAS logo: a robotic arm transfers one mesh specimen between a source pad and worktable.">
+  </picture>
+</p>
+
 **A large-scale 3D mesh dataset for robot simulation, manipulation research, and embodied AI.**
 
 <p align="center">

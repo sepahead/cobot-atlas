@@ -35,6 +35,29 @@ The full dataset is hosted on Hugging Face:
 | + 24 more | 493 | Fabric, tools, toys, vehicles, lab equipment, medical, art supplies |
 | **Total** | **2,024** | |
 
+The data tree holds 2,024 GLB files: the 2,023 meshes listed in `meshes.json` and one
+unlisted alternate model, `primitives/red_cube/red_cube_hunyuan3d.glb`. The 2,023 manifest
+records use 1,936 distinct identifiers, because some items appear in two categories.
+
+### Representative meshes
+
+<p align="center">
+  <img src="assets/gallery.svg" width="860" alt="Forty-two cobot-atlas meshes rendered in a uniform studio view, six for each of seven robotics roles: robots and platforms, industrial components, tools, manipulation benchmarks, everyday objects, perception and calibration, and scenes and primitives.">
+</p>
+
+Each mesh was downloaded from the DOI-pinned revision, checked against the SHA-256 of
+its Git LFS pointer, and rendered with three.js under the same light and camera. Each
+render is scaled to fill its tile, so sizes are not comparable between tiles.
+
+### Coverage for robotics tasks
+
+<p align="center">
+  <img src="assets/coverage.svg" width="860" alt="Bar chart of manifest records by robotics role and category, and a table of eight manipulation tasks with the records that serve each task and suggested additions.">
+</p>
+
+Task counts match categories and identifier prefixes, so one record can serve several
+tasks. The suggested additions name objects that the atlas does not yet contain.
+
 ## This Repository
 
 This repo contains the **generation pipeline** — scripts, manifests, and tools used to produce the dataset.

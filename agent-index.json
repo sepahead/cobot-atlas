@@ -1,0 +1,84 @@
+{
+  "schema": "sepahead.agent-index.v1",
+  "repository": "sepahead/cobot-atlas",
+  "summary": "cobot-atlas: the mesh-generation pipeline, its manifests and raw outputs, and the documentation, figures and citation of the curated 3D mesh dataset on Hugging Face. AGENTS.md is the operating contract; this index restates its facts for tools.",
+  "entry_documents": [
+    {
+      "path": "AGENTS.md",
+      "role": "operating contract for agents"
+    },
+    {
+      "path": "README.md",
+      "role": "dataset overview, counts and figures"
+    },
+    {
+      "path": "docs/README.md",
+      "role": "documentation index"
+    },
+    {
+      "path": "docs/PROMPTS_REFERENCE.md",
+      "role": "generation prompt reference"
+    },
+    {
+      "path": "CITATION.cff",
+      "role": "citation and DOIs"
+    }
+  ],
+  "delivery": {
+    "default_branch": "main",
+    "merge": "Commit documentation changes and push to main after the gates pass; change the pipeline only on the owner's request.",
+    "signing": "follows the committer's configuration; not required",
+    "attribution": "no AI attribution, co-author trailers or generated-by lines",
+    "owner_only": [
+      "release",
+      "tag",
+      "DOI record",
+      "Hugging Face dataset",
+      "repository setting change"
+    ]
+  },
+  "gates": [
+    {
+      "id": "agent-index",
+      "when": "agent-index.json or a path it names changes",
+      "command": "python3 scripts/check_agent_index.py",
+      "cost": "fast"
+    },
+    {
+      "id": "diff-hygiene",
+      "when": "any change",
+      "command": "git diff --check",
+      "cost": "fast"
+    }
+  ],
+  "generated": [
+    {
+      "path": "assets/gallery.svg",
+      "regenerate": "generated outside this repository from dataset revision 425eef2; ask the owner"
+    },
+    {
+      "path": "assets/coverage.svg",
+      "regenerate": "generated outside this repository from dataset revision 425eef2; ask the owner"
+    }
+  ],
+  "frozen": [
+    {
+      "path": "outputs/",
+      "reason": "retained raw pipeline outputs: GLB meshes, PNG previews and JSON metadata; do not rewrite"
+    },
+    {
+      "path": "manifests/",
+      "reason": "generation manifests of the retained outputs; do not rewrite"
+    }
+  ],
+  "ecosystem": [
+    {
+      "repository": "huggingface:torusprime/cobot-atlas",
+      "relation": "the dataset itself (DOI 10.57967/hf/9199)"
+    },
+    {
+      "repository": "sepahead/crebain",
+      "relation": "uses meshes for simulation scenes"
+    }
+  ]
+}

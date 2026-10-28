@@ -5,6 +5,9 @@
 The owner authorizes agents to commit and push documentation changes to `main`.
 Run `python3 scripts/check_agent_index.py` and `git diff --check` before each push.
 Do not add AI attribution, co-author trailers, or generated-by lines.
+Do not cite social-media posts. A post can be deleted or edited, and it can state an opinion as a
+fact, which biases readers and agents and weakens scientific rigor. State the substance in your own
+words with its date, cite the primary source, and do not link the post or name its author.
 Releases, tags, DOI records, the Hugging Face dataset, and repository settings remain owner actions.
 
 ## What this repository holds
